@@ -9,6 +9,7 @@ var userNumberArray = [];
 var userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero:'))
 
 while (counter !== 85 && checkNumberInArray(cpuNumber, userNumber) == false) {
+    counter += 1;
     console.log('Contatore: ' + counter);
     console.log('USER: ' + userNumberArray);
     userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero:'))
@@ -16,7 +17,6 @@ while (counter !== 85 && checkNumberInArray(cpuNumber, userNumber) == false) {
     if (counter === 84) {
         alert('Hai vinto!\nI tuoi numeri: ' + userNumberArray + '\nNumeri CPU: ' + cpuNumber);
     }
-    counter += 1;
 }
 
 if (checkNumberInArray(cpuNumber, userNumber)) {
