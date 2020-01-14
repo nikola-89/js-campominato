@@ -20,7 +20,7 @@ while (counter !== 85 && checkNumberInArray(cpuNumber, userNumber) == false) {
 }
 
 if (checkNumberInArray(cpuNumber, userNumber)) {
-    alert('Hai perso!\nHai inserito: ' + userNumber + '\nNumeri CPU: ' + cpuNumber);
+    alert('Hai perso!\nHai inserito: ' + userNumber + '\nNumeri CPU: ' + cpuNumber + '\nI tuoi numeri: ' + userNumberArray);
 }
 
 // **************************************************************************
