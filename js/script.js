@@ -14,14 +14,12 @@ while (counter !== 85 && checkNumberInArray(cpuNumber, userNumber) == false) {
     userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero:'))
     userNumberArray.push(userNumber);
     if (counter === 84) {
-        alert('Hai vinto! I tuoi numeri consentiti: ' + userNumberArray)
+        alert('Hai vinto! I tuoi numeri: ' + userNumberArray + ' | Numeri CPU: ' + cpuNumber);
     }
     counter += 1;
 }
 
-if (checkNumberInArray(cpuNumber, userNumber)) {
-    alert('Hai perso! Il tuo numero: ' + userNumber + ' | Numeri CPU: ' + cpuNumber);
-}
+alert('Hai perso! Il tuo numero: ' + userNumber + ' | Numeri CPU: ' + cpuNumber);
 
 // **************************************************************************
 function checkNumberInArray(array, number) {
