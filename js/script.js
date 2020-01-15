@@ -6,30 +6,36 @@ while (cpuNumber.length < 16) {
     }
 }
 
-var counter = 1;
 var userNumberArray = [];
 var userNumber;
+var counter = 1;
 
-while (counter !== 85 && checkNumberInArray(cpuNumber, userNumber) == false) {
-    userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero da 1 a 100:'))
-    if (checkNumberInArray(userNumberArray, userNumber) || userNumber >= 100) {
-        alert('Numero già inserito o superiore a 100! Riprova!');
-        counter -= 1;
+while (checkNumberInArray(cpuNumber, userNumber) == false && userNumberArray.length != 5) {
+    userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero da 1 a 100:'));
+    if (checkNumberInArray(userNumberArray, userNumber) == false && checkIs1to100andNan(userNumber)) {
+        userNumberArray.push(userNumber);
+        counter++;
     }
     else {
-        userNumberArray.push(userNumber);
+        alert('Numero già inserito, superiore a 100 o carattere non consentito!\nRiprova!');
     }
-    if (counter === 84) {
-        alert('Hai vinto!\nI tuoi numeri: ' + userNumberArray + '\nNumeri CPU: ' + cpuNumber + '\nPunteggio: ' + counter );
-    }
-    counter += 1;
 }
 
 if (checkNumberInArray(cpuNumber, userNumber)) {
-    alert('Hai perso!\nHai inserito: ' + userNumber + '\nNumeri CPU: ' + cpuNumber + '\nI tuoi numeri: ' + userNumberArray + '\nPunteggio: ' + (counter - 1));
+    alert('Hai perso!\nHai inserito: ' + userNumber + '\nNumeri CPU: ' + cpuNumber + '\nI tuoi numeri: ' + userNumberArray + '\nPunteggio: ' + userNumberArray.length);
+}
+else if (userNumberArray.length == 5) {
+    alert('Hai vinto!\nNumeri CPU: ' + cpuNumber + '\nI tuoi numeri: ' + userNumberArray + '\nPunteggio: ' + userNumberArray.length);
 }
 
 // **************************************************************************
+function checkIs1to100andNan(number) {
+    if (number > 100 || number == 0 || isNaN(number) == true) {
+        return false;
+    }
+    return true;
+}
+
 function checkNumberInArray(array, number) {
     for (var x = 0; x < array.length; x++) {
         if (array[x] === number) {
