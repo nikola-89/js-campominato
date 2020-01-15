@@ -32,6 +32,7 @@ while (cpuNumberArray.length < 16) {
     }
 }
 
+// se il contatore non diminuisce, l'utente non ha inserito un numero, un numero doppio o non nel range giusto.
 do {
     userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero da 1 a ' + level + ':'));
     if (checkNumberInArray(userNumberArray, userNumber) == false && checkIs1toNumberMax(userNumber, level) && checkNumberInArray(cpuNumberArray, userNumber) == false && isNaN(userNumber) == false) {
