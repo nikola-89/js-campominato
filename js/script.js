@@ -37,7 +37,7 @@ while (cpuNumberArray.length < 16) {
     }
 }
 
-// se il contatore non diminuisce, l'utente non ha inserito un numero, un numero doppio o non nel range giusto.
+// se il contatore non diminuisce: l'utente non ha inserito un numero, un numero doppio o non nel range giusto.
 do {
     if (selectLevel == 900) {
         userNumber = parseInt(prompt('[DEBUG] ' + counter + '] Inserisci un numero da 1 a ' + level + ':'));
