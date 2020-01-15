@@ -12,8 +12,8 @@ var userNumber;
 
 while (counter !== 85 && checkNumberInArray(cpuNumber, userNumber) == false) {
     userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero:'))
-    if (checkNumberInArray(userNumberArray, userNumber)) {
-        alert('Numero già inserito!');
+    if (checkNumberInArray(userNumberArray, userNumber) || userNumber > 100) {
+        alert('Numero già inserito o superiore a 100! Riprova!');
         counter -= 1;
     }
     else {
