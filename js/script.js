@@ -1,10 +1,10 @@
 var cpuNumberArray = [];
 var userNumberArray = [];
-var counter = 1;
 var userNumber;
 var selectLevel;
 var level = 0;
 var attempts;
+var counter;
 
 while (level == 0) {
     selectLevel = parseInt(prompt('Inserisci il livello di difficoltà:\nFacile: inserisci 0\nMedio: inserisci 1\nDifficile: inserisci 2'));
@@ -22,6 +22,7 @@ while (level == 0) {
             attempts = 34;
             break;
     }
+    counter = attempts;
 }
 
 while (cpuNumberArray.length < 16) {
@@ -35,7 +36,7 @@ do {
     userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero da 1 a ' + level + ':'));
     if (checkNumberInArray(userNumberArray, userNumber) == false && checkIs1toNumberMax(userNumber, level) && checkNumberInArray(cpuNumberArray, userNumber) == false && isNaN(userNumber) == false) {
         userNumberArray.push(userNumber);
-        counter++;
+        counter--;
     }
 } while (checkNumberInArray(cpuNumberArray, userNumber) == false && userNumberArray.length != attempts);
 
