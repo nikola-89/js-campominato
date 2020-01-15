@@ -22,6 +22,7 @@ while (level == 0) {
             attempts = 34;
             break;
         case 900:
+        // DEBUG con 2 tentativi!
             level = 100;
             attempts = 2;
             break;
