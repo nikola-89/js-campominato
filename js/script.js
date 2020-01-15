@@ -8,18 +8,15 @@ for (var i = 0; i < 16; i++) {
         i -= 1;
     }
 }
-console.log('CPU: ' + cpuNumber);
 
 var counter = 1;
 var userNumberArray = [];
-var userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero:'))
+var userNumber;
 
 while (counter !== 85 && checkNumberInArray(cpuNumber, userNumber) == false) {
-    console.log('Contatore: ' + counter);
-    console.log('USER: ' + userNumberArray);
     userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero:'))
     if (checkNumberInArray(userNumberArray, userNumber)) {
-        alert('Numero già inserito!')
+        alert('Numero già inserito!');
         counter -= 1;
     }
     else {
@@ -37,8 +34,8 @@ if (checkNumberInArray(cpuNumber, userNumber)) {
 
 // **************************************************************************
 function checkNumberInArray(array, number) {
-    for (var i = 0; i < array.length; i++) {
-        if (array[i] === number) {
+    for (var x = 0; x < array.length; x++) {
+        if (array[x] === number) {
             return true;
         }
     }
