@@ -1,23 +1,48 @@
 var cpuNumberArray = [];
+var cpuNumberArray = [];
+var userNumberArray = [];
+var counter = 1;
+var userNumber;
+var selectLevel;
+var levelOk = false;
+var level;
+var attempts;
+
+while (levelOk == false) {
+    selectLevel = parseInt(prompt('Inserisci il livello di difficoltà:\nFacile: inserisci 0\nMedio: inserisci 1\nDifficile: inserisci 2'));
+    switch (selectLevel) {
+        case 0:
+            level = 100;
+            attempts = 84;
+            levelOk = true;
+            break;
+        case 1:
+            level = 80;
+            attempts = 64;
+            levelOk = true;
+            break;
+        case 2:
+            level = 50;
+            attempts = 34;
+            levelOk = true;
+            break;
+    }
+}
+
 while (cpuNumberArray.length < 16) {
-    var cpuRandomNumber = getRandomIntInclusive(1, 100);
+    var cpuRandomNumber = getRandomIntInclusive(1, level);
     if (checkNumberInArray(cpuNumberArray, cpuRandomNumber) == false) {
         cpuNumberArray.push(cpuRandomNumber);
     }
 }
 
-var userNumberArray = [];
-var counter = 1;
-
-// do_while - senza messaggi di errore
-var userNumber;
 do {
-    userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero da 1 a 100:'));
-    if (checkNumberInArray(userNumberArray, userNumber) == false && checkIs1to100(userNumber) && checkNumberInArray(cpuNumberArray, userNumber) == false && isNaN(userNumber) == false) {
+    userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero da 1 a ' + level + ':'));
+    if (checkNumberInArray(userNumberArray, userNumber) == false && checkIs1toMax(userNumber, level) && checkNumberInArray(cpuNumberArray, userNumber) == false && isNaN(userNumber) == false) {
         userNumberArray.push(userNumber);
         counter++;
     }
-} while (checkNumberInArray(cpuNumberArray, userNumber) == false && userNumberArray.length != 3);
+} while (checkNumberInArray(cpuNumberArray, userNumber) == false && userNumberArray.length != attempts);
 
 if (checkNumberInArray(cpuNumberArray, userNumber)) {
     alert('Hai perso!\nHai inserito: ' + userNumber + '\nNumeri CPU: ' + cpuNumberArray + '\nI tuoi numeri: ' + userNumberArray + '\nPunteggio: ' + userNumberArray.length);
@@ -26,8 +51,8 @@ if (checkNumberInArray(cpuNumberArray, userNumber)) {
 }
 
 // **************************************************************************
-function checkIs1to100(number) {
-    if (number > 100 || number == 0) {
+function checkIs1toMax(number, numberMax) {
+    if (number > numberMax || number == 0) {
         return false;
     }
     return true;
