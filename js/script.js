@@ -12,7 +12,7 @@ var userNumber;
 
 do {
     userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero da 1 a 100:'));
-    if (checkNumberInArray(userNumberArray, userNumber) == false && checkIs1to100andNan(userNumber) && checkNumberInArray(cpuNumberArray, userNumber) == false) {
+    if (checkNumberInArray(userNumberArray, userNumber) == false && checkIs1to100(userNumber) && checkNumberInArray(cpuNumberArray, userNumber) == false && isNaN(userNumber) == false) {
         userNumberArray.push(userNumber);
         counter++;
     }
@@ -26,8 +26,8 @@ else if (userNumberArray.length == 84) {
 }
 
 // **************************************************************************
-function checkIs1to100andNan(number) {
-    if (number > 100 || number == 0 || isNaN(number) == true) {
+function checkIs1to100(number) {
+    if (number > 100 || number == 0) {
         return false;
     }
     return true;
