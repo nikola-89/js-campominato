@@ -21,8 +21,7 @@ do {
 
 if (checkNumberInArray(cpuNumberArray, userNumber)) {
     alert('Hai perso!\nHai inserito: ' + userNumber + '\nNumeri CPU: ' + cpuNumberArray + '\nI tuoi numeri: ' + userNumberArray + '\nPunteggio: ' + userNumberArray.length);
-}
-else {
+} else {
     alert('Hai vinto!\nNumeri CPU: ' + cpuNumberArray + '\nI tuoi numeri: ' + userNumberArray + '\nPunteggio: ' + userNumberArray.length);
 }
 
