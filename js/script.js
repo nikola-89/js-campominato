@@ -1,5 +1,4 @@
 var cpuNumberArray = [];
-var cpuNumberArray = [];
 var userNumberArray = [];
 var counter = 1;
 var userNumber;
