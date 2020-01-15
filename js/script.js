@@ -1,11 +1,8 @@
 var cpuNumber = [];
-for (var i = 0; i < 16; i++) {
+while (cpuNumber.length < 16) {
     var cpuRandomNumber = getRandomIntInclusive(1, 100);
     if (checkNumberInArray(cpuNumber, cpuRandomNumber) == false) {
         cpuNumber.push(cpuRandomNumber);
-    }
-    else {
-        i -= 1;
     }
 }
 
@@ -23,13 +20,13 @@ while (counter !== 85 && checkNumberInArray(cpuNumber, userNumber) == false) {
         userNumberArray.push(userNumber);
     }
     if (counter === 84) {
-        alert('Hai vinto!\nI tuoi numeri: ' + userNumberArray + '\nNumeri CPU: ' + cpuNumber + '\nPunteggio: ' + counter);
+        alert('Hai vinto!\nI tuoi numeri: ' + userNumberArray + '\nNumeri CPU: ' + cpuNumber + '\nPunteggio: ' + counter );
     }
     counter += 1;
 }
 
 if (checkNumberInArray(cpuNumber, userNumber)) {
-    alert('Hai perso!\nHai inserito: ' + userNumber + '\nNumeri CPU: ' + cpuNumber + '\nI tuoi numeri: ' + userNumberArray + '\nPunteggio: ' + counter);
+    alert('Hai perso!\nHai inserito: ' + userNumber + '\nNumeri CPU: ' + cpuNumber + '\nI tuoi numeri: ' + userNumberArray + '\nPunteggio: ' + (counter - 1));
 }
 
 // **************************************************************************
