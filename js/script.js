@@ -23,13 +23,13 @@ while (counter !== 85 && checkNumberInArray(cpuNumber, userNumber) == false) {
         userNumberArray.push(userNumber);
     }
     if (counter === 84) {
-        alert('Hai vinto!\nI tuoi numeri: ' + userNumberArray + '\nNumeri CPU: ' + cpuNumber);
+        alert('Hai vinto!\nI tuoi numeri: ' + userNumberArray + '\nNumeri CPU: ' + cpuNumber + '\nPunteggio: ' + counter);
     }
     counter += 1;
 }
 
 if (checkNumberInArray(cpuNumber, userNumber)) {
-    alert('Hai perso!\nHai inserito: ' + userNumber + '\nNumeri CPU: ' + cpuNumber + '\nI tuoi numeri: ' + userNumberArray);
+    alert('Hai perso!\nHai inserito: ' + userNumber + '\nNumeri CPU: ' + cpuNumber + '\nI tuoi numeri: ' + userNumberArray + '\nPunteggio: ' + counter);
 }
 
 // **************************************************************************
