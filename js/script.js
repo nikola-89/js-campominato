@@ -40,7 +40,7 @@ while (cpuNumberArray.length < 16) {
 // se il contatore non diminuisce: l'utente non ha inserito un numero, un numero doppio o non nel range giusto.
 do {
     if (selectLevel == 900) {
-        userNumber = parseInt(prompt('[DEBUG]' + '\nNumeri CPU: ' + cpuNumberArray + '\nI tuoi numeri: ' + userNumberArray + '\nPunteggio: ' + userNumberArray.length + '\n[' + counter + '] Inserisci un numero da 1 a ' + level + ':'));
+        userNumber = parseInt(prompt('[DEBUG]' + '\nNumeri CPU: ' + cpuNumberArray.sort(sortNumber) + '\nI tuoi numeri: ' + userNumberArray.sort(sortNumber) + '\nPunteggio: ' + userNumberArray.length + '\n[' + counter + '] Inserisci un numero da 1 a ' + level + ':'));
     } else {
         userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero da 1 a ' + level + ':'));
     }
@@ -51,9 +51,9 @@ do {
 } while (checkNumberInArray(cpuNumberArray, userNumber) == false && userNumberArray.length != attempts);
 
 if (checkNumberInArray(cpuNumberArray, userNumber)) {
-    alert('Hai perso!\nHai inserito: ' + userNumber + '\nNumeri CPU: ' + cpuNumberArray + '\nI tuoi numeri: ' + userNumberArray + '\nPunteggio: ' + userNumberArray.length);
+    alert('Hai perso!\nHai inserito: ' + userNumber + '\nNumeri CPU: ' + cpuNumberArray.sort(sortNumber) + '\nI tuoi numeri: ' + userNumberArray.sort(sortNumber) + '\nPunteggio: ' + userNumberArray.length);
 } else {
-    alert('Hai vinto!\nNumeri CPU: ' + cpuNumberArray + '\nI tuoi numeri: ' + userNumberArray + '\nPunteggio: ' + userNumberArray.length);
+    alert('Hai vinto!\nNumeri CPU: ' + cpuNumberArray.sort(sortNumber) + '\nI tuoi numeri: ' + userNumberArray.sort(sortNumber) + '\nPunteggio: ' + userNumberArray.length);
 }
 
 // **************************************************************************
@@ -77,4 +77,8 @@ function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function sortNumber(a, b) {
+    return a - b;
 }
