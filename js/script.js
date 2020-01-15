@@ -21,6 +21,10 @@ while (level == 0) {
             level = 50;
             attempts = 34;
             break;
+        case 900:
+            level = 100;
+            attempts = 2;
+            break;
     }
     counter = attempts;
 }
@@ -34,7 +38,11 @@ while (cpuNumberArray.length < 16) {
 
 // se il contatore non diminuisce, l'utente non ha inserito un numero, un numero doppio o non nel range giusto.
 do {
-    userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero da 1 a ' + level + ':'));
+    if (selectLevel == 900) {
+        userNumber = parseInt(prompt('[DEBUG] ' + counter + '] Inserisci un numero da 1 a ' + level + ':'));
+    } else {
+        userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero da 1 a ' + level + ':'));
+    }
     if (checkNumberInArray(userNumberArray, userNumber) == false && checkIs1toNumberMax(userNumber, level) && checkNumberInArray(cpuNumberArray, userNumber) == false && isNaN(userNumber) == false) {
         userNumberArray.push(userNumber);
         counter--;
