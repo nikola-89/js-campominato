@@ -3,27 +3,23 @@ var userNumberArray = [];
 var counter = 1;
 var userNumber;
 var selectLevel;
-var levelOk = false;
-var level;
+var level = 0;
 var attempts;
 
-while (levelOk == false) {
+while (level == 0) {
     selectLevel = parseInt(prompt('Inserisci il livello di difficoltà:\nFacile: inserisci 0\nMedio: inserisci 1\nDifficile: inserisci 2'));
     switch (selectLevel) {
         case 0:
             level = 100;
             attempts = 84;
-            levelOk = true;
             break;
         case 1:
             level = 80;
             attempts = 64;
-            levelOk = true;
             break;
         case 2:
             level = 50;
             attempts = 34;
-            levelOk = true;
             break;
     }
 }
