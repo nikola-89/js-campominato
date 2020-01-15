@@ -16,12 +16,12 @@ do {
         userNumberArray.push(userNumber);
         counter++;
     }
-} while (checkNumberInArray(cpuNumberArray, userNumber) == false && userNumberArray.length != 5);
+} while (checkNumberInArray(cpuNumberArray, userNumber) == false && userNumberArray.length != 84);
 
 if (checkNumberInArray(cpuNumberArray, userNumber)) {
     alert('Hai perso!\nHai inserito: ' + userNumber + '\nNumeri CPU: ' + cpuNumberArray + '\nI tuoi numeri: ' + userNumberArray + '\nPunteggio: ' + userNumberArray.length);
 }
-else if (userNumberArray.length == 5) {
+else if (userNumberArray.length == 84) {
     alert('Hai vinto!\nNumeri CPU: ' + cpuNumberArray + '\nI tuoi numeri: ' + userNumberArray + '\nPunteggio: ' + userNumberArray.length);
 }
 
