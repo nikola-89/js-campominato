@@ -12,15 +12,12 @@ while (level == 0) {
         case 0:
             level = 100;
             attempts = 84;
-            break;
         case 1:
             level = 80;
             attempts = 64;
-            break;
         case 2:
             level = 50;
             attempts = 34;
-            break;
     }
 }
 
