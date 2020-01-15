@@ -37,7 +37,7 @@ while (cpuNumberArray.length < 16) {
 
 do {
     userNumber = parseInt(prompt('[' + counter + '] Inserisci un numero da 1 a ' + level + ':'));
-    if (checkNumberInArray(userNumberArray, userNumber) == false && checkIs1toMax(userNumber, level) && checkNumberInArray(cpuNumberArray, userNumber) == false && isNaN(userNumber) == false) {
+    if (checkNumberInArray(userNumberArray, userNumber) == false && checkIs1toNumberMax(userNumber, level) && checkNumberInArray(cpuNumberArray, userNumber) == false && isNaN(userNumber) == false) {
         userNumberArray.push(userNumber);
         counter++;
     }
@@ -50,7 +50,7 @@ if (checkNumberInArray(cpuNumberArray, userNumber)) {
 }
 
 // **************************************************************************
-function checkIs1toMax(number, numberMax) {
+function checkIs1toNumberMax(number, numberMax) {
     if (number > numberMax || number == 0) {
         return false;
     }
